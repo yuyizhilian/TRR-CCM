@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a88ea34f-cf5e-4a2c-9c1a-ee71f6aeaa68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/defrcn-mamba2-code.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/defrcn-mamba2-code.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="a88ea34f-cf5e-4a2c-9c1a-ee71f6aeaa68" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +34,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751016331452</updated>
-      <workItem from="1751016334168" duration="654000" />
+      <workItem from="1751016334168" duration="1153000" />
     </task>
     <servers />
   </component>
