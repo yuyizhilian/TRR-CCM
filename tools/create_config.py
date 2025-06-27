@@ -4,7 +4,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='3vt', help='', choices=['coco14', 'voc', 'qiunao', 'fetus', '4ch', 'cenao','3vt','head'])
+    parser.add_argument('--dataset', type=str, default='qiunao', help='', choices=['coco14', 'voc', 'qiunao'])
     parser.add_argument('--config_root', type=str, default='', help='the path to config dir')
     parser.add_argument('--shot', type=int, default=1, help='shot to run experiments over')
     parser.add_argument('--seed', type=int, default=0, help='seed to run experiments over')
@@ -51,7 +51,7 @@ def main():
             if '  TRAIN: ' in lineinfo:
                 _str_ = '  TRAIN: ("coco14_trainval_{}_{}shot_seed{}", )\n'
                 yaml_info[i] = _str_.format(suffix, args.shot, args.seed)
-    elif args.dataset in ['qiunao', 'fetus', '4ch', 'cenao','3vt','head']:
+    elif args.dataset in ['qiunao']:
         name_template = 'defrcn_{}_r101_novelx_{}shot_seedx.yaml'
         yaml_path = os.path.join(args.config_root, name_template.format(args.setting, args.shot))
         yaml_info = load_config_file(yaml_path)
