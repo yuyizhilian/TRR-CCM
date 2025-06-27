@@ -95,7 +95,7 @@ def main(args):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='coco', choices=['voc', 'coco', 'qiunao', 'fetus', '4ch','3vt','head'])
+    parser.add_argument('--dataset', type=str, default='coco', choices=['voc', 'coco', 'qiunao'])
     parser.add_argument('--src-path', type=str, default='', help='Path to the main checkpoint')
     parser.add_argument('--save-dir', type=str, default='', required=True, help='Save directory')
     parser.add_argument('--method', choices=['remove', 'randinit'], required=True,
@@ -120,12 +120,6 @@ if __name__ == '__main__':
     elif args.dataset == 'fetus':
         TAR_SIZE = 9
     elif args.dataset == 'qiunao':
-        TAR_SIZE = 7
-    elif args.dataset == '4ch':
-        TAR_SIZE = 9
-    elif args.dataset == '3vt':
-        TAR_SIZE = 6
-    elif args.dataset == 'head':
         TAR_SIZE = 7
     else:
         raise NotImplementedError
