@@ -377,38 +377,9 @@ from mamba_ssm import Mamba
 class Block(nn.Module):
     def __init__(self, channel):
         super(Block, self).__init__()
-        self.dim = channel
-        self.norm = nn.LayerNorm(channel)
-        self.conv= nn.Conv2d(channel,channel,1)
-        # 深度卷积层
-        self.depthwise_conv = nn.Conv2d(
-            in_channels=channel,
-            out_channels=channel,
-            kernel_size=3,
-            stride=1,
-            padding=1,
-            groups=channel  # 深度卷积，使每个通道独立于它的卷积操作
-        )
-        self.mamba = Mamba(
-            d_model=channel, # Model dimension d_model
-            d_state=16,  # SSM state expansion factor
-            d_conv=4,    # Local convolution width
-            expand=2,    # Block expansion factor
-        )
+      
         return
 
     def forward(self, x):
-        if x.dtype == torch.float16:
-            x = x.type(torch.float32)
-        B, C = x.shape[:2]
-        assert C == self.dim
-        n_tokens = x.shape[2:].numel()
-        img_dims = x.shape[2:]
-        x=self.conv(x)
-        x=self.depthwise_conv(x)
-        x_flat = x.reshape(B, C, n_tokens).transpose(-1, -2)
-        x_norm = self.norm(x_flat)
-        x_mamba = self.mamba(x_norm)
-        out = x_mamba.transpose(-1, -2).reshape(B, C, *img_dims)
 
         return out
