@@ -358,18 +358,10 @@ class Transformer(nn.Module):
 class BfMamba(nn.Module):
     def __init__(self, channel, depth=2):
         super(BfMamba, self).__init__()
-        self.model=nn.ModuleList()
-        for i in range(depth):
-            self.model.append(Block(channel))
-        return
+      
 
     def forward(self, bbox_feats):
-        for ea in self.model:
-            feats = ea(bbox_feats)
-            bbox_feats = bbox_feats + feats
-            bbox_feats = ea(bbox_feats)
 
-        return bbox_feats
         
 
 from mamba_ssm import Mamba
@@ -382,4 +374,3 @@ class Block(nn.Module):
 
     def forward(self, x):
 
-        return out
